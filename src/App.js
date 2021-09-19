@@ -3,7 +3,7 @@ import Header from './app_components/header_component/Header'
 import Card from './app_components/card_component/Card'
 import Footer from './app_components/footer_component/Footer'
 
-function App() {
+function App(data) {
   return (
     <div className="App">
       <Header />
