@@ -1,43 +1,20 @@
 import './Card.css'
 
-function Card() {
+function Card({
+  data,
+  characterNames,
+  species,
+  status,
+  imageUrl,
+  episode,
+  key,
+}) {
+  console.log(imageUrl)
+
   return (
     <div>
       <button>
-        <img
-          className="image__character"
-          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          alt=""
-        />
-        {/* for later array: characters.image */}
-      </button>
-      <button>
-        <img
-          className="image__character"
-          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          alt=""
-        />
-      </button>
-      <button>
-        <img
-          className="image__character"
-          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          alt=""
-        />
-      </button>
-      <button>
-        <img
-          className="image__character"
-          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          alt=""
-        />
-      </button>
-      <button>
-        <img
-          className="image__character"
-          src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-          alt=""
-        />
+        <img className="image__character" src={imageUrl} alt="" />
       </button>
     </div>
   )

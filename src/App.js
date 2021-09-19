@@ -4,13 +4,27 @@ import Card from './app_components/card_component/Card'
 import Footer from './app_components/footer_component/Footer'
 
 function App({ data }) {
-  console.table(data)
-  console.log(data[0].name)
+  // toDo maps durchführen
+
+  let allData = data
+
+  console.log(allData)
 
   return (
     <div className="App">
       <Header />
-      <Card />
+
+      {allData.map((character) => (
+        <Card
+          characterNames={character.name}
+          species={character.species}
+          status={character.status}
+          imageUrl={character.image}
+          episode={character.episode}
+          key={character.id}
+        />
+      ))}
+
       <Footer />
     </div>
   )
