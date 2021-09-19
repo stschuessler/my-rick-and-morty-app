@@ -15,8 +15,6 @@ function Card({
     <div>
       <button>
         <img className="image__character" src={imageUrl} alt="" />
-        {/* for later array: characters.image 
-        console.log(data[0].name)  */}
       </button>
     </div>
   )
