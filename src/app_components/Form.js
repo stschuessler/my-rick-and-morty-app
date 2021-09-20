@@ -6,7 +6,7 @@ function CreateCharacterForm({ onCreateCharacter }) {
         <input type="text" name="characterName"></input>
       </label>
       <label>
-        House:
+        Planet:
         <input type="text" name="planet"></input>
       </label>
       <button>Click me</button>
