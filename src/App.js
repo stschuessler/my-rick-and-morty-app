@@ -46,14 +46,22 @@ function App({ data }) {
         <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
         {dataInputForm.map((character) => (
           <div>
-            {character.name} from {character.house}
+            {character.name} from {character.planet}
           </div>
         ))}
       </div>
     </div>
   )
 
-  function handleCreateCharacter({ name, house }) {}
+  function handleCreateCharacter({ name, planet }) {
+    const newInputData = [
+      ...dataInputForm,
+      {
+        name: name,
+        planet: planet,
+      },
+    ]
+  }
 }
 
 export default App
