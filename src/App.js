@@ -53,7 +53,7 @@ function App({ data }) {
     </div>
   )
 
-  function handleCreateCharacter() {}
+  function handleCreateCharacter({ name, house }) {}
 }
 
 export default App
