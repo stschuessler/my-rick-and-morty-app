@@ -1,4 +1,4 @@
-function CreateCharacterForm() {
+function CreateCharacterForm({ onCreateCharacter }) {
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <label>

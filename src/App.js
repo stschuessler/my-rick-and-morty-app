@@ -17,7 +17,7 @@ function App({ data }) {
     },
   ]
 
-  const [dataInputForm, setNewDataInputForm] = useState([INITIAL_DATA])
+  const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
 
   return (
     <div className="App">
@@ -61,7 +61,7 @@ function App({ data }) {
         planet: planet,
       },
     ]
-    setNewDataInputForm(newInputData)
+    setDataInputForm(newInputData)
   }
 }
 
