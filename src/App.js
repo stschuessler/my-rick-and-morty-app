@@ -10,6 +10,8 @@ function App({ data }) {
 
   console.log(allData)
 
+  const [dataInputForm, setDataInputForm] = useState([])
+
   return (
     <div className="App">
       <div className="Header">
