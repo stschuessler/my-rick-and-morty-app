@@ -43,7 +43,7 @@ function App({ data }) {
       </div>
 
       <div>
-        <CreateCharacterForm />
+        <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
       </div>
     </div>
   )
