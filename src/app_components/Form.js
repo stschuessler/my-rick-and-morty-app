@@ -7,7 +7,7 @@ function CreateCharacterForm({ onCreateCharacter }) {
       </label>
       <label>
         House:
-        <input type="text" name="house"></input>
+        <input type="text" name="planet"></input>
       </label>
       <button>Click me</button>
     </form>
@@ -16,13 +16,19 @@ function CreateCharacterForm({ onCreateCharacter }) {
   function handleSubmit(eventInside) {
     eventInside.preventDefault()
     const form = eventInside.target
-    const { characterName, house } = form.elements
+    const { characterName, planet } = form.elements
     console.log('form:', form)
     console.log('form.elements', form.elements)
     console.log('name of character: ' + characterName.value)
-    console.log('haus: ' + house.value)
-    form.reset()
+    console.log('planet: ' + planet.value)
+
+    onCreateCharacter({
+      name: characterName.value,
+      planet: planet.value,
+    })
+
     characterName.focus()
+    form.reset()
   }
 }
 
