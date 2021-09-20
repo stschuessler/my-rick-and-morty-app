@@ -44,6 +44,11 @@ function App({ data }) {
 
       <div>
         <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+        {dataInputForm.map((character) => (
+          <div>
+            {character.name} from {character.house}
+          </div>
+        ))}
       </div>
     </div>
   )
