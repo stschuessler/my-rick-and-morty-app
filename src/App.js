@@ -45,7 +45,7 @@ function App({ data }) {
       <div>
         <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
         {dataInputForm.map((character) => (
-          <div>
+          <div key={character.name}>
             {character.name} from {character.planet}
           </div>
         ))}
