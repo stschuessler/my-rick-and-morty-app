@@ -47,6 +47,8 @@ function App({ data }) {
       </div>
     </div>
   )
+
+  function handleCreateCharacter() {}
 }
 
 export default App
