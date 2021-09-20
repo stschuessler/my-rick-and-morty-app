@@ -13,7 +13,8 @@ function Card({
 
   return (
     <div>
-      <button>
+      {/* <img className="image__character" src={imageUrl} alt="" /> */}
+      <button className="character__button">
         <img className="image__character" src={imageUrl} alt="" />
       </button>
     </div>
