@@ -12,20 +12,26 @@ function App({ data }) {
 
   return (
     <div className="App">
-      <Header />
+      <div className="Header">
+        <Header />
+      </div>
 
-      {allData.map((character) => (
-        <Card
-          characterNames={character.name}
-          species={character.species}
-          status={character.status}
-          imageUrl={character.image}
-          episode={character.episode}
-          key={character.id}
-        />
-      ))}
+      <div className="Card">
+        {allData.map((character) => (
+          <Card
+            characterNames={character.name}
+            species={character.species}
+            status={character.status}
+            imageUrl={character.image}
+            episode={character.episode}
+            key={character.id}
+          />
+        ))}
+      </div>
 
-      <Footer />
+      <div className="Footer">
+        <Footer />
+      </div>
     </div>
   )
 }

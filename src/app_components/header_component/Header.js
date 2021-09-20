@@ -1,7 +1,7 @@
 function Header() {
   return (
-    <header className="titel">
-      <h1>Rick and Morty Characters</h1>
+    <header>
+      <h1 className="titel">Rick and Morty Characters</h1>
     </header>
   )
 }
