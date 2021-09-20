@@ -10,7 +10,14 @@ function App({ data }) {
 
   console.log(allData)
 
-  const [dataInputForm, setDataInputForm] = useState([])
+  const INITIAL_DATA = [
+    {
+      name: 'Rick',
+      planet: 'Earth',
+    },
+  ]
+
+  const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
 
   return (
     <div className="App">
