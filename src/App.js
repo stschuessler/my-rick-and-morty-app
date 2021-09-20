@@ -5,8 +5,6 @@ import Footer from './app_components/footer_component/Footer'
 import CreateCharacterForm from './app_components/Form'
 
 function App({ data }) {
-  // toDo maps durchführen
-
   let allData = data
 
   console.log(allData)
