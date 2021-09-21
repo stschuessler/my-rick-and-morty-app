@@ -66,6 +66,13 @@ function App({ data }) {
   }
 }
 
+const StyledCard = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 10px;
+  height: auto;
+`
+
 const StyledFooter = styled.div`
   height: 100px;
   display: flex;
