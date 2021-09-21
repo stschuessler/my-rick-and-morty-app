@@ -1,4 +1,3 @@
-import './App.css'
 import Header from './app_components/header_component/Header'
 import Card from './app_components/card_component/Card'
 import Footer from './app_components/footer_component/Footer'
@@ -21,12 +20,12 @@ function App({ data }) {
   const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
 
   return (
-    <div className="App">
-      <div className="Header">
+    <StyledApp>
+      <StyledHeader>
         <Header />
-      </div>
+      </StyledHeader>
 
-      <div className="Card">
+      <StyledCard>
         {allData.map((character) => (
           <Card
             characterNames={character.name}
@@ -37,7 +36,7 @@ function App({ data }) {
             key={character.id}
           />
         ))}
-      </div>
+      </StyledCard>
 
       <StyledFooter>
         <Footer />
@@ -51,7 +50,7 @@ function App({ data }) {
           </div>
         ))}
       </div>
-    </div>
+    </StyledApp>
   )
 
   function handleCreateCharacter({ name, planet }) {
@@ -65,6 +64,24 @@ function App({ data }) {
     setDataInputForm(newInputData)
   }
 }
+
+const StyledApp = styled.div`
+  text-align: center;
+`
+
+const StyledHeader = styled.div`
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const StyledCard = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 10px;
+  height: auto;
+`
 
 const StyledFooter = styled.div`
   height: 100px;
