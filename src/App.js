@@ -22,9 +22,9 @@ function App({ data }) {
 
   return (
     <div className="App">
-      <div className="Header">
+      <StyledHeader>
         <Header />
-      </div>
+      </StyledHeader>
 
       <StyledCard>
         {allData.map((character) => (
@@ -65,6 +65,13 @@ function App({ data }) {
     setDataInputForm(newInputData)
   }
 }
+
+const StyledHeader = styled.div`
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const StyledCard = styled.div`
   display: grid;
