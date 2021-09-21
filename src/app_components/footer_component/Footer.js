@@ -7,7 +7,6 @@ function Footer() {
       <button>species</button>
       <button>episodes</button>
       <button>status</button>
-      {CreateCharacterForm()}
     </footer>
   )
 }
