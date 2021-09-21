@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyles />
     <App data={data} />
   </React.StrictMode>,
   document.getElementById('root'),
