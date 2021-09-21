@@ -14,6 +14,11 @@ const INITIAL_DATA = [
   },
 ]
 
+function App({ data }) {
+  let allData = data
+
+  console.log(allData)
+
   const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
 
   return (
@@ -39,14 +44,22 @@ const INITIAL_DATA = [
         <Footer />
       </StyledFooter>
 
-      <StyledFormDiv>
-        <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
-        {dataInputForm.map((character) => (
-          <StyledAppCardDiv key={character.name}>
-            {character.name} from {character.planet}
-          </StyledAppCardDiv>
-        ))}
-      </StyledFormDiv>
+      <Router>
+        <StyledFormDiv>
+          <Switch>
+            <Route exact path="/entry">
+              <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+            </Route>
+            {dataInputForm.map((character) => (
+              <Route exact path="/charactercard">
+                <StyledAppCardDiv key={character.name}>
+                  {character.name} from {character.planet}
+                </StyledAppCardDiv>
+              </Route>
+            ))}
+          </Switch>
+        </StyledFormDiv>
+      </Router>
     </StyledApp>
   )
 
