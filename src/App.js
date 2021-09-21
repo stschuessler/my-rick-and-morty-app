@@ -21,7 +21,7 @@ function App({ data }) {
   const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
 
   return (
-    <div className="App">
+    <StyledApp>
       <StyledHeader>
         <Header />
       </StyledHeader>
@@ -51,7 +51,7 @@ function App({ data }) {
           </div>
         ))}
       </div>
-    </div>
+    </StyledApp>
   )
 
   function handleCreateCharacter({ name, planet }) {
@@ -65,6 +65,10 @@ function App({ data }) {
     setDataInputForm(newInputData)
   }
 }
+
+const StyledApp = styled.div`
+  text-align: center;
+`
 
 const StyledHeader = styled.div`
   height: 100px;
