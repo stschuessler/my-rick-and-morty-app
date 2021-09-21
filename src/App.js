@@ -42,14 +42,14 @@ function App({ data }) {
         <Footer />
       </StyledFooter>
 
-      <div>
+      <StyledFormDiv>
         <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
         {dataInputForm.map((character) => (
-          <div key={character.name}>
+          <StyledAppCardDiv key={character.name}>
             {character.name} from {character.planet}
-          </div>
+          </StyledAppCardDiv>
         ))}
-      </div>
+      </StyledFormDiv>
     </StyledApp>
   )
 
@@ -88,6 +88,14 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+const StyledFormDiv = styled.div``
+
+const StyledAppCardDiv = styled.div`
+  border: 2px solid pink;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px 20px;
 `
 
 export default App
