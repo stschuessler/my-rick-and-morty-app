@@ -1,3 +1,7 @@
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyles = createGlobalStyle`
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,3 +24,6 @@ html {
   box-sizing: inherit;
   margin: 0;
 }
+`
+
+export default GlobalStyles
