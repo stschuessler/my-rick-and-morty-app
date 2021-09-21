@@ -26,7 +26,7 @@ function App({ data }) {
         <Header />
       </div>
 
-      <div className="Card">
+      <StyledCard>
         {allData.map((character) => (
           <Card
             characterNames={character.name}
@@ -37,7 +37,7 @@ function App({ data }) {
             key={character.id}
           />
         ))}
-      </div>
+      </StyledCard>
 
       <StyledFooter>
         <Footer />
