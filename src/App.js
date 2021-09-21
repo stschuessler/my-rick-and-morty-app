@@ -7,12 +7,12 @@ import styled from 'styled-components'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-  const INITIAL_DATA = [
-    {
-      name: 'Rick',
-      planet: 'Earth',
-    },
-  ]
+const INITIAL_DATA = [
+  {
+    name: 'Rick',
+    planet: 'Earth',
+  },
+]
 
   const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
 
