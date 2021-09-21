@@ -12,7 +12,6 @@ function CreateCharacterForm({ onCreateCharacter }) {
         <input type="text" name="planet"></input>
       </label>
       <Button>Click me</Button>
-      <Button primary>Primary Button</Button>
     </form>
   )
 
