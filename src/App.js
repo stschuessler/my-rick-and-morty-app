@@ -4,6 +4,7 @@ import Card from './app_components/card_component/Card'
 import Footer from './app_components/footer_component/Footer'
 import CreateCharacterForm from './app_components/Form'
 import { useState } from 'react'
+import styled from 'styled-components'
 
 function App({ data }) {
   let allData = data
@@ -38,9 +39,9 @@ function App({ data }) {
         ))}
       </div>
 
-      <div className="Footer">
+      <StyledFooter>
         <Footer />
-      </div>
+      </StyledFooter>
 
       <div>
         <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
@@ -64,5 +65,12 @@ function App({ data }) {
     setDataInputForm(newInputData)
   }
 }
+
+const StyledFooter = styled.div`
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 export default App

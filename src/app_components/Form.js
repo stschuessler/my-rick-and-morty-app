@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 function CreateCharacterForm({ onCreateCharacter }) {
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
@@ -9,7 +11,8 @@ function CreateCharacterForm({ onCreateCharacter }) {
         Planet:
         <input type="text" name="planet"></input>
       </label>
-      <button>Click me</button>
+      <Button>Click me</Button>
+      <Button primary>Primary Button</Button>
     </form>
   )
 
@@ -31,5 +34,15 @@ function CreateCharacterForm({ onCreateCharacter }) {
     form.reset()
   }
 }
+
+const Button = styled.button`
+  color: red;
+  background: transparent;
+  border: 2px solid palevioletred;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`
 
 export default CreateCharacterForm
