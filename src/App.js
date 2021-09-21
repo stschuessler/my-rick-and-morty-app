@@ -12,6 +12,10 @@ const INITIAL_DATA = [
     name: 'Rick',
     planet: 'Earth',
   },
+  {
+    name: 'Morty',
+    planet: 'Earth',
+  },
 ]
 
 function App({ data }) {
@@ -19,7 +23,7 @@ function App({ data }) {
 
   console.log(allData)
 
-  const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
+  const [dataInputForm, setDataInputForm] = useState(INITIAL_DATA)
 
   return (
     <StyledApp>
