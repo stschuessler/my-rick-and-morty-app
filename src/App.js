@@ -4,20 +4,26 @@ import Footer from './app_components/footer_component/Footer'
 import CreateCharacterForm from './app_components/Form'
 import { useState } from 'react'
 import styled from 'styled-components'
+import { Route, Switch } from 'react-router'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+const INITIAL_DATA = [
+  {
+    name: 'Rick',
+    planet: 'Earth',
+  },
+  {
+    name: 'Morty',
+    planet: 'Earth',
+  },
+]
 
 function App({ data }) {
   let allData = data
 
   console.log(allData)
 
-  const INITIAL_DATA = [
-    {
-      name: 'Rick',
-      planet: 'Earth',
-    },
-  ]
-
-  const [dataInputForm, setDataInputForm] = useState([INITIAL_DATA])
+  const [dataInputForm, setDataInputForm] = useState(INITIAL_DATA)
 
   return (
     <StyledApp>
@@ -42,14 +48,22 @@ function App({ data }) {
         <Footer />
       </StyledFooter>
 
-      <div>
-        <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
-        {dataInputForm.map((character) => (
-          <div key={character.name}>
-            {character.name} from {character.planet}
-          </div>
-        ))}
-      </div>
+      <Router>
+        <StyledFormDiv>
+          <Switch>
+            <Route exact path="/entry">
+              <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+            </Route>
+            {dataInputForm.map((character) => (
+              <Route exact path="/charactercard">
+                <StyledAppCardDiv key={character.name}>
+                  {character.name} from {character.planet}
+                </StyledAppCardDiv>
+              </Route>
+            ))}
+          </Switch>
+        </StyledFormDiv>
+      </Router>
     </StyledApp>
   )
 
@@ -88,6 +102,14 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+const StyledFormDiv = styled.div``
+
+const StyledAppCardDiv = styled.div`
+  border: 2px solid pink;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px 20px;
 `
 
 export default App
