@@ -1,6 +1,3 @@
-import './Footer.css'
-import CreateCharacterForm from '../Form'
-
 function Footer() {
   return (
     <footer>
