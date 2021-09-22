@@ -53,7 +53,7 @@ function App({ data }) {
           <Switch>
             <Route exact path="/">
               Want to create a new characters?
-              <Link to="/entry">Just click me!</Link>
+              <StyledLink to="/entry">Just click me!</StyledLink>
             </Route>
             <Route exact path="/entry">
               <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
