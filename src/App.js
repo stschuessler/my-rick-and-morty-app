@@ -4,7 +4,7 @@ import Footer from './app_components/footer_component/Footer'
 import CreateCharacterForm from './app_components/Form'
 import { useState } from 'react'
 import styled from 'styled-components'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, Link } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const INITIAL_DATA = [
@@ -48,22 +48,28 @@ function App({ data }) {
         <Footer />
       </StyledFooter>
 
-      <Router>
-        <StyledFormDiv>
-          <Switch>
-            <Route exact path="/entry">
-              <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+      {/* <Router> */}
+      <StyledFormDiv>
+        <Switch>
+          <Route exact path="/">
+            Want to create a new characters?
+            <StyledLink to="/entry">Just click me!</StyledLink>
+            Want to see your entries?
+            <StyledLink to="/character">Click me!</StyledLink>
+          </Route>
+          <Route exact path="/entry">
+            <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+          </Route>
+          {dataInputForm.map((character) => (
+            <Route exact path="/character">
+              <StyledAppCardDiv key={character.name}>
+                {character.name} from {character.planet}
+              </StyledAppCardDiv>
             </Route>
-            {dataInputForm.map((character) => (
-              <Route exact path="/charactercard">
-                <StyledAppCardDiv key={character.name}>
-                  {character.name} from {character.planet}
-                </StyledAppCardDiv>
-              </Route>
-            ))}
-          </Switch>
-        </StyledFormDiv>
-      </Router>
+          ))}
+        </Switch>
+      </StyledFormDiv>
+      {/* </Router> */}
     </StyledApp>
   )
 
@@ -110,6 +116,10 @@ const StyledAppCardDiv = styled.div`
   border-radius: 5px;
   padding: 20px;
   margin: 10px 20px;
+`
+
+export const StyledLink = styled(Link)`
+  color: orange;
 `
 
 export default App
