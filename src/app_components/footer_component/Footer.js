@@ -1,7 +1,9 @@
+import { StyledLink } from '../../App'
+
 function Footer() {
   return (
     <footer>
-      <button>species</button>
+      <StyledLink to="/entry">Entries</StyledLink>
       <button>episodes</button>
       <button>status</button>
     </footer>
