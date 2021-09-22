@@ -4,7 +4,7 @@ import Footer from './app_components/footer_component/Footer'
 import CreateCharacterForm from './app_components/Form'
 import { useState } from 'react'
 import styled from 'styled-components'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, Link } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const INITIAL_DATA = [
