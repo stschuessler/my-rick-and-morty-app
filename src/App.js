@@ -116,4 +116,8 @@ const StyledAppCardDiv = styled.div`
   margin: 10px 20px;
 `
 
+const StyledLink = styled(Link)`
+  color: orange;
+`
+
 export default App
