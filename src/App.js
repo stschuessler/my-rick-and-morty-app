@@ -59,7 +59,7 @@ function App({ data }) {
               <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
             </Route>
             {dataInputForm.map((character) => (
-              <Route exact path="/charactercard">
+              <Route exact path="/character">
                 <StyledAppCardDiv key={character.name}>
                   {character.name} from {character.planet}
                 </StyledAppCardDiv>
