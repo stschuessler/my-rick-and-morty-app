@@ -2,7 +2,7 @@ import Header from './app_components/header_component/Header'
 import Card from './app_components/card_component/Card'
 import Footer from './app_components/footer_component/Footer'
 import CreateCharacterForm from './app_components/Form'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Route, Switch, Link } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -18,10 +18,18 @@ const INITIAL_DATA = [
   },
 ]
 
-function App({ data }) {
-  let allData = data
+function App() {
+  const [allData, setData] = useState([])
 
-  console.log(allData)
+  useEffect(() => {
+    fetch('https://rickandmortyapi.com/api/character')
+      .then((response) => response.json())
+      .then((dataFromServer) => {
+        console.log(dataFromServer.results)
+
+        setData(dataFromServer.results)
+      })
+  }, [])
 
   const [dataInputForm, setDataInputForm] = useState(INITIAL_DATA)
 
