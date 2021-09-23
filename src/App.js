@@ -18,10 +18,18 @@ const INITIAL_DATA = [
   },
 ]
 
-function App({ data }) {
-  let allData = data
+function App() {
+  const [allData, setData] = useState([])
 
-  console.log(allData)
+  useEffect(() => {
+    fetch('https://rickandmortyapi.com/api/character')
+      .then((response) => response.json())
+      .then((dataFromServer) => {
+        console.log(dataFromServer.results)
+
+        setData(dataFromServer.results)
+      })
+  }, [])
 
   const [dataInputForm, setDataInputForm] = useState(INITIAL_DATA)
 
