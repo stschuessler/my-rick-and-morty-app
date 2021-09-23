@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import data from './rick-and-morty.json'
+//import data from './rick-and-morty.json'
 import reportWebVitals from './reportWebVitals'
 import GlobalStyles from './GlobalStyles'
 import { Route, Switch, Link } from 'react-router-dom'
@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <GlobalStyles />
-      <App data={data} />
+      <App />
     </Router>
   </React.StrictMode>,
   document.getElementById('root'),
