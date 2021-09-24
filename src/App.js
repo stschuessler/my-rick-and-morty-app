@@ -59,23 +59,23 @@ function App() {
       {/* <Router> */}
       <StyledFormDiv>
         <Switch>
-          <Route exact path="/">
-            Want to create a new characters?
-            <StyledLink to="/entry">Just click me!</StyledLink>
-            Want to see your entries?
-            <StyledLink to="/character">Click me!</StyledLink>
-          </Route>
           <Route exact path="/entry">
             <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
           </Route>
           {dataInputForm.map((character) => (
-            <Route exact path="/character">
+            <Route exact path={['/character/new', '/character']}>
               <StyledAppCardDiv key={character.name}>
                 {character.name} from {character.planet}
               </StyledAppCardDiv>
             </Route>
           ))}
         </Switch>
+        <Route path="/">
+          Want to create a new characters?
+          <StyledLink to="/entry">Just click me!</StyledLink>
+          Want to see your entries?
+          <StyledLink to="/character">Click me!</StyledLink>
+        </Route>
       </StyledFormDiv>
       {/* </Router> */}
     </StyledApp>
