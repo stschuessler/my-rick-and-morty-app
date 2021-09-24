@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 function Card({
-  data,
-  characterNames,
-  species,
-  status,
   imageUrl,
-  episode,
-  key,
+  // data,
+  // characterNames,
+  // species,
+  // status,
+  // episode,
+  // key,
 }) {
   console.log(imageUrl)
 

@@ -42,12 +42,12 @@ function App() {
       <StyledCard>
         {allData.map((character) => (
           <Card
-            characterNames={character.name}
-            species={character.species}
-            status={character.status}
             imageUrl={character.image}
-            episode={character.episode}
-            key={character.id}
+            // characterNames={character.name}
+            // species={character.species}
+            // status={character.status}
+            // episode={character.episode}
+            // key={character.id}
           />
         ))}
       </StyledCard>
