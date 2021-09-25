@@ -4,12 +4,12 @@ import { MemoryRouter as Router } from 'react-router-dom'
 import Card from './Card'
 
 describe('Card', () => {
-  const image = 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+  const imageUrl = 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 
-  it('renders', () => {
+  it('has a button', () => {
     render(
       <Router>
-        <Card image={image} />
+        <Card imageUrl={imageUrl} />
       </Router>,
     )
 
