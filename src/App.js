@@ -55,17 +55,17 @@ function App() {
         <Footer />
       </StyledFooter>
       <StyledFormDiv>
-        <Switch>
-          <Route exact path="/entry">
-            <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+        {/* <Switch> */}
+        <Route exact path="/entry">
+          <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+        </Route>
+        {dataInputForm.map((character) => (
+          <Route exact path={['/character/new', '/character']}>
+            <StyledAppCardDiv key={character.name}>
+              {character.name} from {character.planet}
+            </StyledAppCardDiv>
           </Route>
-          {dataInputForm.map((character) => (
-            <Route exact path={['/character/new', '/character']}>
-              <StyledAppCardDiv key={character.name}>
-                {character.name} from {character.planet}
-              </StyledAppCardDiv>
-            </Route>
-          ))}
+        ))}
         </Switch>
         <Route path="/">
           Want to create a new characters?
