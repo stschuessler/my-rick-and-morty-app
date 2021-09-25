@@ -15,6 +15,10 @@ const INITIAL_DATA = [
     name: 'Morty',
     planet: 'Earth',
   },
+  {
+    name: 'test',
+    planet: 'test',
+  },
 ]
 
 function App() {
@@ -37,7 +41,6 @@ function App() {
       <StyledHeader>
         <Header />
       </StyledHeader>
-
       <StyledCard>
         {allData.map((character) => (
           <Card
@@ -50,7 +53,6 @@ function App() {
           />
         ))}
       </StyledCard>
-
       <StyledFooter>
         <Footer />
       </StyledFooter>
@@ -66,7 +68,7 @@ function App() {
             </StyledAppCardDiv>
           </Route>
         ))}
-        </Switch>
+        {/* </Switch> */}
         <Route path="/">
           Want to create a new characters?
           <StyledLink to="/entry">Just click me!</StyledLink>
