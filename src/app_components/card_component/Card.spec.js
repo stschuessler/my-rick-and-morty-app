@@ -17,4 +17,16 @@ describe('Card', () => {
 
     expect(button).toBeInTheDocument()
   })
+
+  it('has a alt text', () => {
+    render(
+      <Router>
+        <Card imageUrl={imageUrl} />
+      </Router>,
+    )
+
+    const url = screen.getByAltText('')
+
+    expect(url).toBeInTheDocument()
+  })
 })
