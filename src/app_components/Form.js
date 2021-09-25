@@ -5,11 +5,16 @@ function CreateCharacterForm({ onCreateCharacter }) {
     <form onSubmit={(event) => handleSubmit(event)}>
       <label>
         Name of character:
-        <input type="text" name="characterName"></input>
+        <input
+          type="text"
+          name="characterName"
+          required
+          autocomplete="Off"
+        ></input>
       </label>
       <label>
         Planet:
-        <input type="text" name="planet"></input>
+        <input type="text" name="planet" required></input>
       </label>
       <Button>Click me</Button>
     </form>
