@@ -5,7 +5,6 @@ import CreateCharacterForm from './app_components/Form'
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Route, Switch, Link } from 'react-router-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 const INITIAL_DATA = [
   {
@@ -55,8 +54,6 @@ function App() {
       <StyledFooter>
         <Footer />
       </StyledFooter>
-
-      {/* <Router> */}
       <StyledFormDiv>
         <Switch>
           <Route exact path="/entry">
@@ -77,7 +74,6 @@ function App() {
           <StyledLink to="/character">Click me!</StyledLink>
         </Route>
       </StyledFormDiv>
-      {/* </Router> */}
     </StyledApp>
   )
 
