@@ -25,7 +25,28 @@ function CreateCharacterForm({ onCreateCharacter }) {
     const form = eventInside.target
     const { characterName, planet } = form.elements
     console.log('form:', form)
+    // form enthält:
+    //  <form>
+    //   <label>
+    //     Name of character:
+    //     <input type="text" name="characterName"></input>
+    //   </label>
+    //   <label>
+    //     Planet:
+    //     <input type="text" name="planet"></input>
+    //   </label>
+    //   <button>Click me</button>
+    // </form>
     console.log('form.elements', form.elements)
+    // form.elements enthält eine Liste mit 3 Einträgen
+    // HTMLFormControlsCollection(3) [input, input, button, characterName: input, planet: input]
+    // darin enthalten:
+    // 0: input
+    // 1: input
+    // 2: button
+    // characterName: input
+    // length: 3
+
     console.log('name of character: ' + characterName.value)
     console.log('planet: ' + planet.value)
 
