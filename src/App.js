@@ -5,7 +5,6 @@ import CreateCharacterForm from './app_components/Form'
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Route, Switch, Link } from 'react-router-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 const INITIAL_DATA = [
   {
@@ -15,6 +14,10 @@ const INITIAL_DATA = [
   {
     name: 'Morty',
     planet: 'Earth',
+  },
+  {
+    name: 'test',
+    planet: 'test',
   },
 ]
 
@@ -38,7 +41,6 @@ function App() {
       <StyledHeader>
         <Header />
       </StyledHeader>
-
       <StyledCard>
         {allData.map((character) => (
           <Card
@@ -51,25 +53,22 @@ function App() {
           />
         ))}
       </StyledCard>
-
       <StyledFooter>
         <Footer />
       </StyledFooter>
-
-      {/* <Router> */}
       <StyledFormDiv>
-        <Switch>
-          <Route exact path="/entry">
-            <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+        {/* <Switch> */}
+        <Route exact path="/entry">
+          <CreateCharacterForm onCreateCharacter={handleCreateCharacter} />
+        </Route>
+        {dataInputForm.map((character) => (
+          <Route exact path={['/character/new', '/character']}>
+            <StyledAppCardDiv key={character.name}>
+              {character.name} from {character.planet}
+            </StyledAppCardDiv>
           </Route>
-          {dataInputForm.map((character) => (
-            <Route exact path={['/character/new', '/character']}>
-              <StyledAppCardDiv key={character.name}>
-                {character.name} from {character.planet}
-              </StyledAppCardDiv>
-            </Route>
-          ))}
-        </Switch>
+        ))}
+        {/* </Switch> */}
         <Route path="/">
           Want to create a new characters?
           <StyledLink to="/entry">Just click me!</StyledLink>
@@ -77,7 +76,6 @@ function App() {
           <StyledLink to="/character">Click me!</StyledLink>
         </Route>
       </StyledFormDiv>
-      {/* </Router> */}
     </StyledApp>
   )
 
