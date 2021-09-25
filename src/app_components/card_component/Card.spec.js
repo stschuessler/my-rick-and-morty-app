@@ -29,4 +29,16 @@ describe('Card', () => {
 
     expect(url).toBeInTheDocument()
   })
+
+  it('has an image', () => {
+    render(
+      <Router>
+        <Card imageUrl={imageUrl} />
+      </Router>,
+    )
+
+    const img = screen.getByRole('img')
+
+    expect(img).toBeInTheDocument()
+  })
 })
